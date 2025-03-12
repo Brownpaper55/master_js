@@ -13,9 +13,14 @@
             <p id="question">Loading...</p>
         </div>
         <div id="options-container"></div>
-        <p>Time left: <span id="timer">5</span> sec</p>
+        <p>Time left: <span id="timer"></span> sec</p>
         <p>Score: <span id="score">0</span></p>
     </div>
+    <div id="alert" class="message-box">
+        <p id="alert-message">Quiz Over!<br> Your final score: 0</p>
+        <button class="btn" onclick="closeAlert()">OK</button>
+    </div>
+    
     <script src="index.js"></script>
 </body>
 </html>
