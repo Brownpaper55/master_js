@@ -52,7 +52,7 @@ let timerInterval;
 function startQuiz(){
     currentQuestionIndex = 0;
     score = 0;
-    timer = 0
+    timer = 5
     nextEL.innerText = 'Next';
     //clear an existing time interval
     if (timerInterval){
@@ -107,6 +107,7 @@ function selectAnswer(e){
         score++;
     }else{
         selectedBtn.classList.add('incorrect')
+        score--;
     }
     Array.from(answerEL.children).forEach(button=>{
         if(button.dataset.correct === 'true'){
@@ -121,10 +122,12 @@ function selectAnswer(e){
 //this function checks the time
 function updatetime(){
    
-    timer++;
+    timer--;
     timeEL.innerHTML = timer;
-    if(timer > 4){
-        timer = 0;
+    
+    if(timer == 0){
+        timer += 5
+        
         if(currentQuestionIndex < questions.length){
             handleNextBtn();
     
@@ -163,7 +166,7 @@ function handleNextBtn(){
 nextEL.addEventListener('click',()=>{
     if(currentQuestionIndex < questions.length){
         handleNextBtn();
-        timer = 0;
+        timer += 5; 
     }else{
         startQuiz();
         
