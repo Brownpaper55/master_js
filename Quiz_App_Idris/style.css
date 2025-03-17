@@ -62,7 +62,7 @@
     background: #457b9d;
 }
 
-/* Disabled answer buttons */
+/* Disabled answers buttons */
 .answer-btn.disabled {
     pointer-events: none;
     opacity: 0.6;
